@@ -3,13 +3,11 @@ var helmet = require('helmet');
 var app = express();
 
 app.use(helmet.hidePoweredBy());
-app.use(helmet(
-{
+app.use(helmet({
   frameguard: {
-    action: "deny",
-  },
-})
-);
+    action: "deny"
+  }
+}));
 
 
 
