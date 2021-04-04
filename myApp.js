@@ -13,6 +13,12 @@ var timeInSeconds = 90 * 24 * 60 * 60;
 app.use(helmet({hsts: {maxAge: timeInSeconds, force: true}}));
 app.use(helmet.dnsPrefetchControl());
 app.use(helmet.noCache());
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'"],
+  },
+}));
 
 
 
